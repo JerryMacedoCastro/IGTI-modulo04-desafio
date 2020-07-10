@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import GradeDataService from '../services/GradeService';
+import React, { useState } from "react";
+import GradeDataService from "../services/GradeService";
 
 const AddGrade = () => {
   const initialGradeState = {
     id: null,
-    name: '',
-    subject: '',
-    type: '',
-    value: '',
+    name: "",
+    subject: "",
+    type: "",
+    value: "",
   };
   const [grade, setGrade] = useState(initialGradeState);
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,7 @@ const AddGrade = () => {
     GradeDataService.create(data)
       .then((response) => {
         setGrade({
-          id: response.data.id,
+          _id: response.data.id,
           name: response.data.name,
           subject: response.data.img,
           type: response.data.type,
